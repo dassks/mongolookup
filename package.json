@@ -1,6 +1,6 @@
 {
     "name": "mongolookup",
-    "displayName": "MongoLookup",
+    "displayName": "Mongo Lookup",
     "description": "Extention to help debugging _id found in code by showing the full object",
     "version": "0.0.1",
     "engines": {
@@ -10,7 +10,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.sayHello",
+        "onLanguage:typescript"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -28,11 +29,16 @@
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
+    "dependencies": {
+        "clipboardy": "latest",
+        "mongodb": "^3.1.10"
+    },
     "devDependencies": {
-        "typescript": "^3.1.4",
-        "vscode": "^1.1.21",
-        "tslint": "^5.8.0",
+        "@types/mocha": "^2.2.42",
+        "@types/mongodb": "^3.1.17",
         "@types/node": "^8.10.25",
-        "@types/mocha": "^2.2.42"
+        "tslint": "^5.8.0",
+        "typescript": "^3.1.4",
+        "vscode": "^1.1.21"
     }
 }
